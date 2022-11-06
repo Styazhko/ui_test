@@ -29,10 +29,11 @@ class TestYandex:
         disk_page.open_folder(self.NAME_FOLDER)
         disk_page = DiskPage(browser, browser.current_url)
         disk_page.create_new_file(self.NAME_FILE)
-        disk_page.should_be_add_new_file(self.NAME_FILE)
         window_three = browser.window_handles[2]
         browser.switch_to.window(window_three)
         disk_page.should_be_name_new_file(self.NAME_FILE)
         browser.close()
+        browser.switch_to.window(window_two)
+        disk_page.should_be_add_new_file(self.NAME_FILE)
         browser.switch_to.window(window_one)
         main_page.logout()
