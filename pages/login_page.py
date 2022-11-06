@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-
+from ..settings import login, password
 
 '''Страница авторизации'''
 class LoginPage(BasePage):
@@ -8,8 +8,8 @@ class LoginPage(BasePage):
     locators = LoginPageLocators()
 
     '''Данные для входа'''
-    LOGIN = "testui.test"
-    PASSWORD = "Test2022"
+    LOGIN = login
+    PASSWORD = password
 
     '''Вход в профиль'''
     def login(self):
@@ -20,5 +20,4 @@ class LoginPage(BasePage):
         password = self.element_is_visible(self.locators.PASSWORD)
         password.send_keys(self.PASSWORD)
         self.element_is_visible(self.locators.BUTTON).click()
-        
         
