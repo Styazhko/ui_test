@@ -10,7 +10,6 @@ class MainPageLocators:
     
 
 class LoginPageLocators:
-    TELEPHONE = (By.CSS_SELECTOR, "#passp-field-phone")
     MAIL = (By.CSS_SELECTOR, ".AuthLoginInputToggle-type > button")
     LOGIN = (By.CSS_SELECTOR, "#passp-field-login")
     PASSWORD = (By.CSS_SELECTOR, "#passp-field-passwd")
