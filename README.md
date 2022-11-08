@@ -18,7 +18,7 @@ venv\Scripts\activate
 ```
 pip install -r requirements.txt
 ```
-6. Добавить логин и пароль в файл 'settings.py' (уже находятся там)
+6. Добавить логин и пароль в файл 'settings.py'
 7. Запустить тест:
 ```
 pytest test_yandex_disk.py
