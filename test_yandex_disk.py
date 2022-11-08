@@ -20,16 +20,16 @@ class TestYandex:
         login_page = LoginPage(browser, browser.current_url)
         login_page.login()
         main_page = MainPage(browser, browser.current_url)
-        window_one = browser.window_handles[0]
+        window_one = browser.window_handles[-1]
         main_page.go_to_disk()
-        window_two = browser.window_handles[1]
+        window_two = browser.window_handles[0]
         browser.switch_to.window(window_two)
         disk_page = DiskPage(browser, browser.current_url)
         disk_page.create_new_folder(self.NAME_FOLDER)
         disk_page.open_folder(self.NAME_FOLDER)
         disk_page = DiskPage(browser, browser.current_url)
         disk_page.create_new_file(self.NAME_FILE)
-        window_three = browser.window_handles[2]
+        window_three = browser.window_handles[1]
         browser.switch_to.window(window_three)
         disk_page.should_be_name_new_file(self.NAME_FILE)
         browser.close()
